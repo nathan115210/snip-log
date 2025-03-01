@@ -2,7 +2,6 @@
 
 import * as React from "react";
 
-
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 export function ThemeProvider({
@@ -14,9 +13,5 @@ export function ThemeProvider({
     setMounted(true);
   }, []);
   if (!mounted) return null;
-  return (
-
-      <NextThemesProvider {...props}>{children}</NextThemesProvider>
-
-  );
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }

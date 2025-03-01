@@ -3,26 +3,23 @@ export enum TagsBgColor {
   REACT_HOOK = "bg-blue-500",
   NEXT_JS = "bg-blue-300",
   FALLBACK = "bg-stone-500",
-
 }
 
 export enum TagsTextColor {
   BLACK = "text-black",
-  WHITE = "text-white"
-
+  WHITE = "text-white",
 }
 
-const convertTagName = (tag: string): string => tag.toUpperCase().split(".").join("_");
+const convertTagName = (tag: string): string =>
+  tag.toUpperCase().split(".").join("_");
 
 const isValidTag = (tag: string): boolean => {
-
-
   return tag in TagsBgColor;
 };
 
 export interface TagColor {
-  bgColor: TagsBgColor,
-  textColor: TagsTextColor
+  bgColor: TagsBgColor;
+  textColor: TagsTextColor;
 }
 
 export const tagColor = (tagName: string): TagColor => {

@@ -3,41 +3,40 @@
 
 /* Code block container */
 pre {
-    padding: 1rem;
-    border-radius: 8px;
-    overflow-x: auto;
-    background-color: #1e1e1e;
-    color: #f8f8f2;
-    font-size: 0.95rem;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  background-color: #1e1e1e;
+  color: #f8f8f2;
+  font-size: 0.95rem;
 }
 
 /* Inline code */
 code {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-family: "Fira Code", monospace;
-    font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
 }
 
 /* Line numbers */
 pre[data-line] {
-    position: relative;
+  position: relative;
 }
 
 pre[data-line] .line-numbers-rows {
-    padding-right: 1rem;
-    text-align: right;
-    user-select: none;
-    color: rgba(255, 255, 255, 0.3);
+  padding-right: 1rem;
+  text-align: right;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /* Highlight active line */
 pre[data-line] .highlight-line {
-    background-color: rgba(255, 255, 255, 0.1);
-    display: block;
-    margin: 0 -1rem;
-    padding: 0 1rem;
-    border-left: 4px solid #ffcc00;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: block;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+  border-left: 4px solid #ffcc00;
 }
-

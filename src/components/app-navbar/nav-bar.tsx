@@ -3,9 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { SVGProps } from "react";
+
 import { ThemeSwitcher } from "@/components/app-navbar/theme-switcher";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { NavMenuItemProps } from "@/types/types";
 
 import { IconPackages } from "@tabler/icons-react";
@@ -18,8 +24,6 @@ const menuItems: NavMenuItemProps[] = [
 ];
 
 export default function NavBar() {
-
-
   const pagePath = usePathname();
 
   return (
@@ -46,7 +50,6 @@ export default function NavBar() {
           })}
         </nav>
         <div className="flex items-center gap-4">
-
           <ThemeSwitcher />
           <Sheet>
             <SheetTrigger asChild>
@@ -70,7 +73,6 @@ export default function NavBar() {
               >
                 Mobile Navigation Menu
               </SheetTitle>
-
             </SheetContent>
           </Sheet>
         </div>

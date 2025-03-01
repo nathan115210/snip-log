@@ -1,10 +1,10 @@
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
+import path from "path";
+import rehypeHighlight from "rehype-highlight";
+import rehypeStringify from "rehype-stringify";
 import { remark } from "remark";
 import remarkRehype from "remark-rehype";
-import rehypeStringify from "rehype-stringify";
-import rehypeHighlight from "rehype-highlight";
 
 // Define the directory storing markdown files
 const contentDirectory = path.join(process.cwd(), "content");
