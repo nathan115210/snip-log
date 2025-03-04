@@ -15,6 +15,7 @@ export interface ArticleMeta {
   date: string;
   description: string;
   tags: string[];
+  demoName?: string;
 }
 
 // Interface for an article
@@ -39,7 +40,7 @@ export const getArticleBySlug = (slug: string): Article => {
   const filePath = path.join(contentDirectory, `${slug}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
-
+  
   return { slug, meta: data as ArticleMeta, content };
 };
 
