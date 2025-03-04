@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-import { cva, type VariantProps } from "class-variance-authority";
+import { type VariantProps, cva } from "class-variance-authority";
 
 const badgeVariants = cva(
   "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:hover:outline-2 outline-offset-2 outline-solid",
@@ -18,7 +18,7 @@ const badgeVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  },
+  }
 );
 
 export interface BadgeProps
@@ -31,12 +31,16 @@ function Badge({ className, variant, tagLabel, ...props }: BadgeProps) {
   const { bgColor, textColor } = tagColor(tagLabel);
   //className={`${bgColor} ${textColor}`}
   return (
-    <div className={cn(badgeVariants({ variant }), className, bgColor, textColor)} {...props} >{tagLabel}</div>
+    <div
+      className={cn(badgeVariants({ variant }), className, bgColor, textColor)}
+      {...props}
+    >
+      {tagLabel}
+    </div>
   );
 }
 
 export { Badge, badgeVariants };
-
 
 // Helpers
 

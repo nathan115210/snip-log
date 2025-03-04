@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./styles.module.scss";
 
+import styles from "./styles.module.scss";
 
 const TankProgressBar = () => {
   const [value, setValue] = useState<string>("0");
@@ -51,7 +51,6 @@ const TankProgressBar = () => {
         onChange={(e) => handleInputOnChange(e)}
       />
     </div>
-
   );
 };
 export default TankProgressBar;
