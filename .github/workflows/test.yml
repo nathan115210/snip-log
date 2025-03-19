@@ -14,6 +14,6 @@ jobs:
         with:
           node-version: 20 # Same node version as in runner supported versions
       - name: Install dependencies # Install dependencies.
-        run: pnpm install
+        run: npm install
       - name: Run tests # Run tests
         run: pnpm test
