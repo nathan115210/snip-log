@@ -13,17 +13,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20 # Same node version as in runner supported versions
-          cache: 'pnpm' # Enables caching for pnpm dependencies
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-      - name: Debug Environment
-        run: |
-          which pnpm || echo "pnpm not found"
-          echo "PATH: $PATH"
-          pnpm --version || echo "pnpm is not installed"
       - name: Install dependencies # Install dependencies.
-        run: pnpm install
+        run: npm install
       - name: Run tests # Run tests
-        run: pnpm test
+        run: npm test
