@@ -1,5 +1,5 @@
 # the workflow for unit testing, which triggered when push the commit to repository
-name: Unit Test Project
+name: Deploy Project
 on: push # triggered when push the commit to repository
 jobs:
   test:
@@ -17,3 +17,16 @@ jobs:
         run: npm install
       - name: Run tests # Run tests
         run: npm test
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code # download code from repository to runner
+        uses: actions/checkout@v4 #
+      - name: Install NodeJs
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Same node version as in runner supported versions
+      - name: Install dependencies # Install dependencies.
+        run: npm install
+      - name: Deploy
+        run: echo "Deploying the project"
