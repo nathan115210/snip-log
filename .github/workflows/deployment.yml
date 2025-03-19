@@ -28,5 +28,7 @@ jobs:
           node-version: 20 # Same node version as in runner supported versions
       - name: Install dependencies # Install dependencies.
         run: npm install
+      - name: Build project
+        run: npm run build
       - name: Deploy
         run: echo "Deploying the project"
