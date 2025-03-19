@@ -1,6 +1,6 @@
 # the workflow for unit testing, which triggered when push the commit to repository
 name: Deploy Project
-on: push # triggered when push the commit to repository
+on: [ push, workflow_dispatch ] # triggered when push the commit to repository and manually trigger the workflow
 jobs:
   test:
     runs-on: ubuntu-latest
