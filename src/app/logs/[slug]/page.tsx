@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getArticleBySlug, markdownToHtml } from "@/lib/md-parser";
 import "@/styles/highlight.css";
 
-type ArticlePageProps = { params: { slug: string } };
+type ArticlePageProps = { params: Promise<{ slug: string }> };
 
 export default async function Page({ params }: ArticlePageProps) {
   const pageParams = await params;
@@ -21,7 +21,8 @@ export default async function Page({ params }: ArticlePageProps) {
     : null;
 
   return (
-    <div className="m-8 mx-auto flex max-w-full flex-col gap-6 rounded-lg bg-amber-200 p-[2rem] text-2xl dark:bg-amber-800 md:max-w-5xl">
+    <div
+      className="m-8 mx-auto flex max-w-full flex-col gap-6 rounded-lg bg-amber-200 p-[2rem] text-2xl dark:bg-amber-800 md:max-w-5xl">
       <h1 className="text-5xl">{title}</h1>
 
       {DemoComponent && (
