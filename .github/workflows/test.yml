@@ -13,7 +13,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20 # Same node version as in runner supported versions
+          cache: 'pnpm' # Enables caching for pnpm dependencies
+      - name: Install pnpm # Install pnpm using Corepack
+        run: corepack enable && corepack prepare pnpm@latest --activate
       - name: Install dependencies # Install dependencies.
-        run: npm install
+        run: pnpm install
       - name: Run tests # Run tests
-        run: npm test
+        run: pnpm test
