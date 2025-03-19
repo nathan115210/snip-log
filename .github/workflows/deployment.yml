@@ -2,7 +2,21 @@
 name: Deploy Project
 on: [ push, workflow_dispatch ] # triggered when push the commit to repository and manually trigger the workflow
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code # download code from repository to runner
+        uses: actions/checkout@v4
+      - name: Install NodeJs
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Same node version as in runner supported versions
+      - name: Install dependencies # Install dependencies.
+        run: npm install
+      - name: Run lint
+        run: npm run lint
   test:
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Get code # download code from repository to runner
