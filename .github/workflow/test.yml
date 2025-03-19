@@ -1,0 +1,19 @@
+# the workflow for unit testing, which triggered when push the commit to repository
+name: Unit Test Project
+on: push # triggered when push the commit to repository
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code # download code from repository to runner
+        uses: actions/checkout@v4 # https://github.com/marketplace/actions/checkout
+        # Note: No need to install nodejs, since "ubuntu-latest" has it preinstalled https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
+        # This is just the example how it works with actions for installing node
+      - name: Install NodeJs
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Same node version as in runner supported versions
+      - name: Install dependencies # Install dependencies.
+        run: pnpm install
+      - name: Run tests # Run tests
+        run: pnpm test
