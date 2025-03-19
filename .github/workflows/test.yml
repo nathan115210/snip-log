@@ -15,10 +15,9 @@ jobs:
           node-version: 20 # Same node version as in runner supported versions
           cache: 'pnpm' # Enables caching for pnpm dependencies
       - name: Install pnpm
-        run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
-          pnpm --version # Debugging: Check if pnpm is installed
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - name: Install dependencies # Install dependencies.
         run: pnpm install
       - name: Run tests # Run tests
